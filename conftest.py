@@ -1,5 +1,6 @@
 import pytest
 from playwright.sync_api import sync_playwright
+import uuid
 
 @pytest.fixture
 def page():
@@ -12,3 +13,17 @@ def page():
 
         context.close()
         browser.close()
+
+#Para registro dinámico de usuarios
+@pytest.fixture
+def test_user():
+    unique = uuid.uuid4().hex[:8] #Crea un identificador único, para no repetir.
+
+    return {
+        "nombre": "Prueba",
+        "apellido": "Automation",
+        "email": f"qaauto_{unique}@email.com", #Al estar el unique, el fixture no necesita eliminar el usuario después de la prueba.
+        "password": "qa123",
+        "telefono": "123456789",
+        "direccion": "Fake St 123"
+    }
