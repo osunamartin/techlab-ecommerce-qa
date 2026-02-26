@@ -27,3 +27,11 @@ def test_user():
         "telefono": "123456789",
         "direccion": "Fake St 123"
     }
+
+@pytest.fixture
+def login_admin(page):
+    page.goto("http://localhost:8080/")
+    page.fill("#loginEmail", "admin@techlab.com")
+    page.fill("#loginPassword", "admin123")
+    page.get_by_role("button", name="Iniciar Sesión").click()
+    yield page

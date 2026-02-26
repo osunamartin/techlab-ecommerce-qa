@@ -14,6 +14,7 @@ def test_registration(page, test_user):
 
     page.get_by_role("button", name="Registrarse").click()
 
+    #Redirecciona al catálogo de productos después del registro exitoso.
     heading = page.locator("h2", has_text="Catálogo de Productos")
     heading.wait_for()
     assert heading.is_visible()

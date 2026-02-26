@@ -1,0 +1,54 @@
+🖥 UI (Flujos críticos end-to-end)
+
+Estos validan integración completa frontend + backend.
+
+1️⃣ Login cliente → ve catálogo
+
+✔ Verifica autenticación
+✔ Verifica redirección
+✔ Verifica carga de productos
+
+2️⃣ Registro usuario nuevo → entra al sistema
+
+✔ Verifica validaciones
+✔ Verifica guardado en DB
+✔ Verifica redirección
+
+3️⃣ Cliente crea pedido → aparece en “mis pedidos”
+
+✔ Verifica carrito
+✔ Verifica creación
+✔ Verifica persistencia
+
+4️⃣ Admin cambia estado de pedido
+
+✔ Verifica permisos
+✔ Verifica transición válida
+
+🔌 API (reglas internas y seguridad)
+
+Más rápidos y más quirúrgicos.
+
+5️⃣ Cliente NO puede cambiar estado (403)
+
+Seguridad crítica.
+
+6️⃣ Pedido sin items devuelve 400
+
+Validación obligatoria.
+
+7️⃣ Stock insuficiente devuelve 400
+
+Regla de negocio clave.
+
+8️⃣ Stock disminuye después de crear pedido
+
+Efecto secundario real.
+
+9️⃣ Cliente no puede ver pedidos ajenos (403)
+
+Privacidad.
+
+🔟 Email duplicado devuelve 400
+
+Integridad de datos.
