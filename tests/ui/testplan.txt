@@ -2,53 +2,63 @@
 
 Estos validan integración completa frontend + backend.
 
-1️⃣ Login cliente → ve catálogo
+1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣0️⃣
+
+✔ 1️⃣ Login cliente → ve catálogo. 
 
 ✔ Verifica autenticación
 ✔ Verifica redirección
 ✔ Verifica carga de productos
 
-2️⃣ Registro usuario nuevo → entra al sistema
+✔ 2️⃣ Registro usuario nuevo → entra al sistema
 
 ✔ Verifica validaciones
 ✔ Verifica guardado en DB
 ✔ Verifica redirección
 
-3️⃣ Cliente crea pedido → aparece en “mis pedidos”
+✔ 3️⃣ Cliente agrega producto al carrito → aparece en “carrito”
 
-✔ Verifica carrito
-✔ Verifica creación
-✔ Verifica persistencia
+✔Fixture crea un producto de 0
+✔Logea como Admin 
+✔Agrega producto al carrito
+✔Verifica que el producto esté en el carrito.
 
-4️⃣ Admin cambia estado de pedido
 
-✔ Verifica permisos
-✔ Verifica transición válida
+   4️⃣Cliente crea pedido → aparece en “mis pedidos”
+
+ Verifica carrito
+ Verifica creación
+ Verifica persistencia
+
+5️⃣ Admin cambia estado de pedido
+
+ Verifica permisos
+ Verifica transición válida
 
 🔌 API (reglas internas y seguridad)
 
 Más rápidos y más quirúrgicos.
 
-5️⃣ Cliente NO puede cambiar estado (403)
+6️⃣ Cliente NO puede cambiar estado (403)
 
 Seguridad crítica.
 
-6️⃣ Pedido sin items devuelve 400
+7️⃣ Pedido sin items devuelve 400
 
 Validación obligatoria.
 
-7️⃣ Stock insuficiente devuelve 400
+8️⃣ Stock insuficiente devuelve 400
 
 Regla de negocio clave.
 
-8️⃣ Stock disminuye después de crear pedido
+9️⃣ Stock disminuye después de crear pedido
 
 Efecto secundario real.
 
-9️⃣ Cliente no puede ver pedidos ajenos (403)
+🔟 Cliente no puede ver pedidos ajenos (403)
 
 Privacidad.
 
-🔟 Email duplicado devuelve 400
+1️⃣1️⃣ Email duplicado devuelve 400
 
 Integridad de datos.

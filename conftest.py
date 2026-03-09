@@ -1,6 +1,7 @@
 import pytest
 from playwright.sync_api import sync_playwright
 import uuid
+import requests #Para acceso a API
 
 @pytest.fixture
 def page():
@@ -35,3 +36,26 @@ def login_admin(page):
     page.fill("#loginPassword", "admin123")
     page.get_by_role("button", name="Iniciar Sesión").click()
     yield page
+
+#Crear un producto de prueba para las pruebas E2E, y eliminarlo después.
+@pytest.fixture
+def producto_test():
+    producto = {
+    "nombre": "Producto Automation",
+    "precio": 12345,
+    "descripcion": "Descripción del producto de prueba para automatización",
+    "categoria": "Auriculares",
+    "imagen": "https://images.fravega.com/f500/028b76a6de3d5f67848cf0a3943d121f.jpg",
+    "stock": 1001
+
+}
+
+    response = requests.post(f"http://localhost:8080/api/productos", json=producto)
+    data = response.json()
+
+    producto_id = data["id"]
+
+    yield data
+
+    # teardown
+    requests.delete(f"http://localhost:8080/api/productos/{producto_id}")
