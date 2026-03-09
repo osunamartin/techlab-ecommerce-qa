@@ -24,7 +24,7 @@ Estos validan integración completa frontend + backend.
 ✔Verifica que el producto esté en el carrito.
 
 
-   4️⃣Cliente crea pedido → aparece en “mis pedidos”
+4️⃣Cliente crea pedido → aparece en “mis pedidos”
 
  Verifica carrito
  Verifica creación

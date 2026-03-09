@@ -10,9 +10,9 @@ def test_agregar_producto_al_carrito(page, login_admin, producto_test):
     producto.get_by_role("button", name="Agregar").click()
 
     page.get_by_role("button", name="🛒 Carrito").click()
-   
-    assert page.locator(f"text={producto_test['nombre']}").first.is_visible()
 
+   
+    assert page.locator("text=Producto Automation").first.is_visible()
 
 
 
