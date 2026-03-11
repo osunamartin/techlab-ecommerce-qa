@@ -1,5 +1,6 @@
 🖥 UI (Flujos críticos end-to-end)
 
+
 Estos validan integración completa frontend + backend.
 
 1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣0️⃣
@@ -18,47 +19,25 @@ Estos validan integración completa frontend + backend.
 
 ✔ 3️⃣ Cliente agrega producto al carrito → aparece en “carrito”
 
-✔Fixture crea un producto de 0
-✔Logea como Admin 
-✔Agrega producto al carrito
-✔Verifica que el producto esté en el carrito.
+✔ Fixture crea un producto de 0
+✔ Logea como Admin 
+✔ Agrega producto al carrito
+✔ Verifica que el producto esté en el carrito.
 
 
-4️⃣Cliente crea pedido → aparece en “mis pedidos”
+✔ 4️⃣Cliente crea pedido → aparece en “mis pedidos”
 
- Verifica carrito
- Verifica creación
- Verifica persistencia
+✔ Verifica carrito
+✔ Verifica creación
+✔ Verifica el pedido realizado
 
-5️⃣ Admin cambia estado de pedido
-
- Verifica permisos
- Verifica transición válida
-
-🔌 API (reglas internas y seguridad)
-
-Más rápidos y más quirúrgicos.
-
-6️⃣ Cliente NO puede cambiar estado (403)
-
-Seguridad crítica.
-
-7️⃣ Pedido sin items devuelve 400
-
-Validación obligatoria.
+6️⃣ Cliente NO puede cambiar estado en pedido (API error 403)
 
 8️⃣ Stock insuficiente devuelve 400
 
-Regla de negocio clave.
-
 9️⃣ Stock disminuye después de crear pedido
-
-Efecto secundario real.
 
 🔟 Cliente no puede ver pedidos ajenos (403)
 
-Privacidad.
 
-1️⃣1️⃣ Email duplicado devuelve 400
 
-Integridad de datos.
