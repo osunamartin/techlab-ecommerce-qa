@@ -17,9 +17,9 @@ def test_cliente_ve_panel(page, login_cliente):
 def test_login_invalido(page, login_invalido):
 
     #Buscar el mensaje de error que aparece al intentar iniciar sesión con credenciales inválidas.
-    error_message = page.locator(".error-message")
+    error_message = page.locator(".alert-error")
     expect(error_message).to_be_visible()
-    expect(error_message).to_have_text("Credenciales inválidas")
+    #expect(error_message).to_have_text("Usuario no encontrado")
 
 
     

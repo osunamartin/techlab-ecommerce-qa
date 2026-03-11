@@ -19,12 +19,12 @@ def page():
 #Para registro dinámico de usuarios
 @pytest.fixture
 def test_user():
-    unique = uuid.uuid4().hex[:8] #Crea un identificador único, para no repetir.
+    unique = uuid.uuid4().hex[:8]
 
     return {
         "nombre": "Prueba",
         "apellido": "Automation",
-        "email": f"qaauto_{unique}@email.com", #Al estar el unique, el fixture no necesita eliminar el usuario después de la prueba.
+        "email": f"qaauto_{unique}@email.com",
         "password": "qa123",
         "telefono": "123456789",
         "direccion": "Fake St 123"
@@ -56,7 +56,6 @@ def login_invalido(page):
     page.fill("#loginPassword", "contraseñainvalida")
     page.get_by_role("button", name="Iniciar Sesión").click()
     yield page
-
 
 #Crear un producto de prueba para las pruebas E2E, y eliminarlo después.
 @pytest.fixture
