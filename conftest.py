@@ -48,7 +48,7 @@ def login_cliente(page):
     page.get_by_role("button", name="Iniciar Sesión").click()
     yield page
 
-#Fixture para login inválido, para testing negativo.
+#Fixture de login inválido, para testing negativo.
 @pytest.fixture
 def login_invalido(page):
     page.goto(f"{BASE_UI_URL}")
@@ -57,7 +57,7 @@ def login_invalido(page):
     page.get_by_role("button", name="Iniciar Sesión").click()
     yield page
 
-#Crear un producto de prueba para las pruebas E2E, y eliminarlo después.
+#Crear un producto de prueba para las pruebas E2E, y eliminarlo después (estático)
 @pytest.fixture
 def producto_test():
     producto = {
