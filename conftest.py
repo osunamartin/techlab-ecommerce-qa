@@ -2,19 +2,30 @@ import pytest
 from playwright.sync_api import sync_playwright
 import uuid
 import requests
-from utils.config import BASE_UI_URL #Para acceso a API
+from utils.config import BASE_UI_URL, ADMIN_USER, CLIENT_USER 
+from pages.auth_page import AuthPage
+
+#POM
+@pytest.fixture
+def auth_page(page):
+    page.goto(BASE_UI_URL)
+    return AuthPage(page)
 
 @pytest.fixture
-def page():
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
-        context = browser.new_context()
-        page = context.new_page()
+def login_admin(auth_page):
+    auth_page.login(ADMIN_USER["email"], ADMIN_USER["password"])
+    return auth_page
 
-        yield page
+@pytest.fixture
+def login_cliente(auth_page):
+    auth_page.login(CLIENT_USER["email"], CLIENT_USER["password"])
+    return auth_page
 
-        context.close()
-        browser.close()
+@pytest.fixture
+def login_invalido(auth_page):
+    auth_page.login("usuario_invalido@email.com", "wrongpass")
+    return auth_page
+
 
 #Para registro dinámico de usuarios
 @pytest.fixture
@@ -29,33 +40,6 @@ def test_user():
         "telefono": "123456789",
         "direccion": "Fake St 123"
     }
-
-#Fixture para login como ADMIN
-@pytest.fixture
-def login_admin(page):
-    page.goto(f"{BASE_UI_URL}")
-    page.fill("#loginEmail", "admin@techlab.com")
-    page.fill("#loginPassword", "admin123")
-    page.get_by_role("button", name="Iniciar Sesión").click()
-    yield page
-
-#Fixture para login como CLIENTE
-@pytest.fixture
-def login_cliente(page):
-    page.goto(f"{BASE_UI_URL}")
-    page.fill("#loginEmail", "juan.perez@email.com")
-    page.fill("#loginPassword", "cliente123")
-    page.get_by_role("button", name="Iniciar Sesión").click()
-    yield page
-
-#Fixture de login inválido, para testing negativo.
-@pytest.fixture
-def login_invalido(page):
-    page.goto(f"{BASE_UI_URL}")
-    page.fill("#loginEmail", "usuarioinexistente@email.com")    
-    page.fill("#loginPassword", "contraseñainvalida")
-    page.get_by_role("button", name="Iniciar Sesión").click()
-    yield page
 
 #Crear un producto de prueba para las pruebas E2E, y eliminarlo después (estático)
 @pytest.fixture
