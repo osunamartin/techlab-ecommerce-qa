@@ -5,11 +5,15 @@ class ProductsPage:
         self.page = page
         #El elemento que contiene todos los productos.
         self.productos = page.locator("#productos") 
+        self.products_page = page.get_by_role("link", name="Productos")
 
         #Los botones en esa página.
         self.agregar_producto_button = page.get_by_role("button", name="Agregar al carrito")
         self.editar_producto_button = page.get_by_role("button", name="Editar")
         self.eliminar_producto_button = page.get_by_role("button", name="Eliminar")
+
+    def ir_a_la_pagina_productos(self):
+        self.products_page.click()
     
     #Los métodos(acciones) que se pueden realizar en esa página.
     def agregar_producto_al_carrito(self):

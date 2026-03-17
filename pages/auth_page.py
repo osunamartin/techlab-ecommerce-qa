@@ -1,3 +1,5 @@
+from utils.config import BASE_UI_URL
+
 class AuthPage:
 
     def __init__(self, page):
@@ -17,6 +19,10 @@ class AuthPage:
         self.direccion = page.locator("#registroDireccion")
 
         self.register_button = page.get_by_role("button", name="Registrarse")
+    
+    #Abre la página de inicio de sesión/registro
+    def abrir(self):
+        self.page.goto({f"{BASE_UI_URL}"})
         
     #Método para iniciar sesión
     def login(self, email, password):
@@ -26,7 +32,7 @@ class AuthPage:
         self.login_button.click()
         
     #Método para registrar un usuario
-    def register_user(self, user):
+    def registrar_usuario(self, user):
 
         self.nombre.fill(user["nombre"])
         self.apellido.fill(user["apellido"])
