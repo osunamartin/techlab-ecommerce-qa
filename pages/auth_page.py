@@ -22,7 +22,8 @@ class AuthPage:
     
     #Abre la página de inicio de sesión/registro
     def abrir(self):
-        self.page.goto({f"{BASE_UI_URL}"})
+        
+        self.page.goto(f"{BASE_UI_URL}")
         
     #Método para iniciar sesión
     def login(self, email, password):

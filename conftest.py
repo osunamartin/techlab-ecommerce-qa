@@ -45,15 +45,15 @@ def test_user():
 @pytest.fixture
 def producto_test():
     producto = {
-    "nombre": "Producto Automation",
+    "nombre": "Producto Test",
     "precio": 12345,
     "descripcion": "Descripción del producto de prueba para automatización",
-    "categoria": "Auriculares",
+    "categoria": "Audio",
     "imagen": "https://images.fravega.com/f500/028b76a6de3d5f67848cf0a3943d121f.jpg",
     "stock": 1001
 
 }
-
+    #Crea el producto en la BBDD via API 
     response = requests.post(f"{BASE_UI_URL}/api/productos", json=producto)
     data = response.json()
 
@@ -61,7 +61,7 @@ def producto_test():
 
     yield data
 
-    # teardown
+    # teardown, borra el producto via API (Para reutilizarlo)
     requests.delete(f"{BASE_UI_URL}/api/productos/{producto_id}")
 
 #Crea productos dinámicos para pruebas E2E de pedido, sin eliminarlo después, para evitar conflicto con los pedidos
@@ -74,7 +74,7 @@ def producto_test_automation():
         "nombre": nombre_producto,
         "precio": 4000,
         "descripcion": "Prueba E2E de pedido",
-        "categoria": "Auriculares",
+        "categoria": "Audio",
         "imagen": "https://images.fravega.com/f500/028b76a6de3d5f67848cf0a3943d121f.jpg",
         "stock": 1001
     }
