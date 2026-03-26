@@ -116,7 +116,7 @@ git clone https://github.com/osunamartin/techlab-ecommerce-qa.git
 Entrar al proyecto:
 
 ```
-cd TECHLAB-ECCOMERCE-QA
+cd TECHLAB-ECOMMERCE-QA
 ```
 
 Instalar y ejecutar entorno virtual:
