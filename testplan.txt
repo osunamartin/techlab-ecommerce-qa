@@ -1,7 +1,6 @@
 🖥 UI (Flujos críticos end-to-end)
 
-
-Estos validan integración completa frontend + backend.
+Aplicado Page Object Model
 
 1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣0️⃣
 
@@ -31,13 +30,9 @@ Estos validan integración completa frontend + backend.
 ✔ Verifica creación
 ✔ Verifica el pedido realizado
 
-6️⃣ Cliente NO puede cambiar estado en pedido (API error 403)
+✔5️⃣ Cliente NO puede cambiar estado en pedido (API error 403)
 
-8️⃣ Stock insuficiente devuelve 400
 
-9️⃣ Stock disminuye después de crear pedido
-
-🔟 Cliente no puede ver pedidos ajenos (403)
 
 
 

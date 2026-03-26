@@ -9,7 +9,6 @@ class OrdersPage:
         #Los elementos de la página DENTRO (cada uno de los pedidos, en este caso)
         self.pedidos = page.locator("#pedidos")
         
-        
     #El método para clickear e ir a la página de pedidos.
     def ir_a_la_pagina_de_pedidos(self):
         self.orders_page.click()
