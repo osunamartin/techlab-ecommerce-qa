@@ -1,6 +1,6 @@
 ## 🎯 Objetivo
 
-Este repositorio contiene pruebas automatizadas para una aplicación web de e-commerce, incluyendo:
+Este repositorio contiene pruebas automatizadas para una [aplicación web de e-commerce](https://github.com/nnvelez95/techlab-ecommerce), incluyendo:
 
 * ✅ UI Testing (Playwright)
 * ✅ API Testing (requests)
@@ -34,7 +34,7 @@ Entre ellas:
 
 ## ⚙️ Requisitos previos
 
-Tener levantada la aplicación de e-commerce:
+Tener levantada [la aplicación de e-commerce](https://github.com/nnvelez95/techlab-ecommerce):
 
 * Frontend: (según entorno)
 * Backend/API: (según entorno)
@@ -42,7 +42,7 @@ Tener levantada la aplicación de e-commerce:
 ---
 
 ## 🐍 Setup del entorno (Windows)
-* Crear y activar el entorno virtual
+Crear y activar el entorno virtual:
 * python -m venv venv
 * .\venv\Scripts\activate
 
