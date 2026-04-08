@@ -18,12 +18,10 @@ Among them:
 * Permission validation between different user roles
 * Proper API behavior
 
----
 ## 📝 Manual Testing Documentation
 * [Manual testing report](https://docs.google.com/spreadsheets/d/1JcUxSP62PTEFfykYmUItqD45SBqrw0k08UwF4nQGU1Y/edit?usp=sharing)
 * [Postman endpoints collection](https://martin-osuna13-5732072.postman.co/workspace/Mart%C3%ADn-Osuna's-Workspace~08e23817-d598-437d-826a-c593229a2adf/collection/52450225-d53af880-86ab-4456-9e61-b29b435c1c0b?action=share&creator=52450225&active-environment=52450225-fb784d9d-1f54-4464-9f08-48cea307ce1c)
-
----
+  
 ## 🧰 Technologies
 * Python
 * Pytest
@@ -31,7 +29,6 @@ Among them:
 * Requests
 * Postman (for initial exploration and manual testing)
 
----
 ## ⚙️ Prerequisites
 
 Have the [e-commerce application](https://github.com/nnvelez95/techlab-ecommerce) up and running:
@@ -39,7 +36,6 @@ Have the [e-commerce application](https://github.com/nnvelez95/techlab-ecommerce
 * Frontend: (depending on environment)
 * Backend/API: (depending on environment)
 
----
 ## 🐍 Environment setup (Windows)
 
 Create and activate the virtual environment:
@@ -55,7 +51,6 @@ Install Playwright browsers:
 
 * playwright install
 
----
 ## ▶️ Run tests
 
 Run all tests:
@@ -72,7 +67,6 @@ Run only API:
 
 Headed mode is configured via pytest.ini.
 
----
 ## 🧪 Testing strategy
 
 The project combines UI and API testing to validate both user experience and backend logic.
@@ -111,7 +105,6 @@ File:
 
 * tests/api/test_cliente_estado_pedido.py
 
----
 ## 🧩 Important fixtures
 
 ### test_user:
@@ -127,13 +120,11 @@ File:
 
 * Authenticates an admin user before running tests that require it.
 
----
 ## 🛠️ CI Actions
 
 * .yml script to run tests using GitHub Actions
 * The script runs automatically on every push to the repository.
 
----
 ## 🧼 Best practices used
 
 * Use of Page Object Model (POM)
@@ -142,7 +133,6 @@ File:
 * Dynamic data to avoid collisions
 * Separation between UI tests and API tests
 
----
 ## 🚀 Possible future improvements
 
 * Test reporting (Allure / HTML reports)
@@ -172,19 +162,18 @@ Entre ellas:
 * Validación de permisos entre distintos tipos de usuario
 * Correcto funcionamiento de la API
 
----
 ## 📝 Documentación de Pruebas Manuales
 * [Reporte de pruebas manuales](https://docs.google.com/spreadsheets/d/1JcUxSP62PTEFfykYmUItqD45SBqrw0k08UwF4nQGU1Y/edit?usp=sharing)
 * [Colección de endpoints en Postman](https://martin-osuna13-5732072.postman.co/workspace/Mart%C3%ADn-Osuna's-Workspace~08e23817-d598-437d-826a-c593229a2adf/collection/52450225-d53af880-86ab-4456-9e61-b29b435c1c0b?action=share&creator=52450225&active-environment=52450225-fb784d9d-1f54-4464-9f08-48cea307ce1c)
 
----
+
 ## 🧰 Tecnologías
 * Python
 * Pytest
 * Playwright (Python)
 * Requests
 * Postman (para exploración inicial y pruebas manuales)
----
+
 
 ## ⚙️ Requisitos previos
 
@@ -192,8 +181,6 @@ Tener levantada [la aplicación de e-commerce](https://github.com/nnvelez95/tech
 
 * Frontend: (según entorno)
 * Backend/API: (según entorno)
-
----
 
 ## 🐍 Setup del entorno (Windows)
 Crear y activar el entorno virtual:
@@ -205,7 +192,7 @@ Instalar dependencias:
 
 Instalar navegadores de Playwright:
 * playwright install
----
+
 ## ▶️ Ejecutar tests
 
 Correr todos los tests:
@@ -221,7 +208,6 @@ Correr solo API:
 * pytest tests/api
 Modo visible (headed) configurado desde pytest.ini.
 
----
 ## 🧪 Estrategia de testing
 
 El proyecto combina pruebas de UI y API para validar tanto la experiencia del usuario como la lógica del backend.
