@@ -1,3 +1,157 @@
+## 🎯 Objective
+
+This repository contains automated tests for an [e-commerce web application](https://github.com/nnvelez95/techlab-ecommerce), including:
+
+* ✅ UI Testing (Playwright)
+* ✅ API Testing (requests)
+* ✅ E2E Tests (UI)
+* ✅ User permission validation
+
+The goal is to validate critical system functionalities in a reproducible and scalable way.
+
+Among them:
+
+* User authentication
+* Product management
+* Shopping cart flow
+* Order creation and management
+* Permission validation between different user roles
+* Proper API behavior
+
+---
+## 📝 Manual Testing Documentation
+* [Manual testing report](https://docs.google.com/spreadsheets/d/1JcUxSP62PTEFfykYmUItqD45SBqrw0k08UwF4nQGU1Y/edit?usp=sharing)
+* [Postman endpoints collection](https://martin-osuna13-5732072.postman.co/workspace/Mart%C3%ADn-Osuna's-Workspace~08e23817-d598-437d-826a-c593229a2adf/collection/52450225-d53af880-86ab-4456-9e61-b29b435c1c0b?action=share&creator=52450225&active-environment=52450225-fb784d9d-1f54-4464-9f08-48cea307ce1c)
+
+---
+## 🧰 Technologies
+* Python
+* Pytest
+* Playwright (Python)
+* Requests
+* Postman (for initial exploration and manual testing)
+
+---
+## ⚙️ Prerequisites
+
+Have the [e-commerce application](https://github.com/nnvelez95/techlab-ecommerce) up and running:
+
+* Frontend: (depending on environment)
+* Backend/API: (depending on environment)
+
+---
+## 🐍 Environment setup (Windows)
+
+Create and activate the virtual environment:
+
+* python -m venv venv
+* .\\venv\\Scripts\\activate
+
+Install dependencies:
+
+* pip install -r requirements.txt
+
+Install Playwright browsers:
+
+* playwright install
+
+---
+## ▶️ Run tests
+
+Run all tests:
+
+* pytest tests\\
+
+Run only UI:
+
+* pytest tests/ui
+
+Run only API:
+
+* pytest tests/api
+
+Headed mode is configured via pytest.ini.
+
+---
+## 🧪 Testing strategy
+
+The project combines UI and API testing to validate both user experience and backend logic.
+
+### UI Automation:
+
+* The Page Object Model (POM) pattern is used to encapsulate UI interaction logic.
+
+### Implemented E2E flow:
+
+* User login
+* Add product to cart
+* Create order
+* Validate that the order appears in "My Orders"
+
+Main file:
+
+* tests/ui/test_e2e_pedido.py
+
+### API Automation
+
+* requests-based tests are used to directly validate backend endpoints.
+
+Example case:
+
+* A customer attempts to modify an order status using an admin endpoint.
+
+Flow:
+
+* Customer login
+* Create order
+* Attempt to modify status
+* Validate 403 Forbidden response
+
+File:
+
+* tests/api/test_cliente_estado_pedido.py
+
+---
+## 🧩 Important fixtures
+
+### test_user:
+
+* Creates a dynamic user via API using a unique email (UUID).
+* Helps avoid conflicts between test runs.
+
+### producto_test:
+
+* Creates a test product for E2E scenarios and deletes it afterward.
+
+### login_admin:
+
+* Authenticates an admin user before running tests that require it.
+
+---
+## 🛠️ CI Actions
+
+* .yml script to run tests using GitHub Actions
+* The script runs automatically on every push to the repository.
+
+---
+## 🧼 Best practices used
+
+* Use of Page Object Model (POM)
+* Reusable fixtures
+* Independent tests
+* Dynamic data to avoid collisions
+* Separation between UI tests and API tests
+
+---
+## 🚀 Possible future improvements
+
+* Test reporting (Allure / HTML reports)
+* Greater API coverage
+* Basic performance testing
+
+------
+ESP
+
 ## 🎯 Objetivo
 
 Este repositorio contiene pruebas automatizadas para una [aplicación web de e-commerce](https://github.com/nnvelez95/techlab-ecommerce), incluyendo:
@@ -121,6 +275,10 @@ login_admin:
 
 * Autentica un usuario administrador antes de ejecutar tests que lo requieren.
 
+## 🛠️ CI Actions
+* Script .yml para ejecución de tests por medio de Github Actions
+* El script se ejecuta automaticamente con cada push al repositorio.
+
 ## 🧼 Buenas prácticas usadas
 * Uso de Page Object Model (POM)
 * Fixtures reutilizables
@@ -129,7 +287,6 @@ login_admin:
 * Separación entre UI tests y API tests
 
 ## 🚀 Posibles mejoras futuras
-* Integración con CI/CD (GitHub Actions)
 * Reportes de pruebas (Allure / HTML reports)
 * Mayor cobertura de API
 * Pruebas de performance básicas
